@@ -1,5 +1,7 @@
 import pygame
 
+from src.tabuleiro import Tabuleiro
+
 pygame.init()
 
 LARGURA = 800
@@ -9,6 +11,8 @@ ALTURA = 800
 tela = pygame.display.set_mode((LARGURA, ALTURA))
 pygame.display.set_caption("Xadrez Python")
 
+tabuleiro = Tabuleiro(tela)
+
 rodando = True
 
 while rodando:
@@ -17,8 +21,7 @@ while rodando:
         if evento.type == pygame.QUIT:
             rodando = False
 
-
-    tela.fill((30, 30, 30))
+    tabuleiro.desenhar()
 
     pygame.display.flip()
 
